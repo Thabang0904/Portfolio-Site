@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcome to my Portfolio</title>
+
+        <style>
+            /* ===== Basic Reset & Styling ===== */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', sans-serif;
+                text-align: center;
+            }
+
+            body {
+                background-color: rgb(175, 207, 238);
+                color: #333;
+                line-height: 1.6;
+            }
+
+            header, section {
+                padding: 60px 20px;
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            h1, h2 {
+                margin-bottom: 20px;
+            }
+
+            nav {
+                background: #333;
+                color: white;
+                padding: 15px 20px;
+                text-align: center;
+            }
+
+            nav a {
+                color: white;
+                margin: 0 15px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .hero {
+                text-align: center;
+                padding-top: 80px;
+            }
+
+            .project {
+                background: white;
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .skill {
+                background: #eee;
+                padding: 10px;
+                text-align: center;
+                border-radius: 5px;
+            }
+
+            form {
+                display:flex;
+                flex-direction: column;
+                max-width: 400px;
+                margin: auto;
+            }
+
+            input, textarea {
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+
+            button {
+                padding: 10px;
+                background: #333;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px;
+                background: black;
+                color: limegreen;
+            }
+
+            @media (max-width: 600px) {
+                nav {
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <header id="hero" class="hero">
+        <h1>Hello, I'm Thabang Abel Mogale</h1>
+        <h2>This is my Portfolio</h2>
+        <p>Full Stack Developer | HTML | CSS | JavaScript | Python</p>
+        <button onclick="section('projects')">View My Projects</button>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a passionate Full Stack Developer who recently graduated from the FNB App Academy 2025, currently enrolled to a few bootcamps to fine-tune my skills as a Developer, however my passion for learning and empowering myself within the Tech Industry lies in the love for solving real-world problems and creating clean, maintainable codes.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Todo App</h3>
+                <p>Full Stack Developer with great attention to detail and aspiration to grow within the speciality</p>
+                <p><strong>Tech Skills</strong>JavaScript</p>
+                <a href="#" target="_blank">Live Demo</a> |
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+
+            <div class="project">
+                <h3>Weather Dashboard</h3>
+                <p>Fetches real-time weather data using OpenWeather API.</p>
+                <p><strong>Tech Skills</strong>HTML, CSS & JavaScript</p>
+                <a href="#" target="_blank">Live Demo</a> |
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+
+            <select id="projects" name="projects">
+                <option value="basic-calculator">Basic Calculator</option>
+                <option value="scientific-calculator">Scientific Calculator</option>
+                <option value="neumorphism-log-in">Neumorphism Log In</option>
+                <option value="check-out-form">Check Out Form</option>
+                <option value="countdown-timer">Count Down Timer</option>
+                <option value="click-game">Click Game</option>
+                <option value="comparison-table">Comparison Table</option>
+                <option value="developer">Developer</option>
+                <option value="canada">Canada</option>
+            </select>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">Build an App with HTML</div>
+                <div class="skill">API's + Data Input + Processing</div>
+                <div class="skill">User Centric App Development</div>
+                <div class="skill">Data Management and Analysis</div>
+                <div class="skill">Backend Development</div>
+            </div>
+        </section>
+
+        <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="row">
+            <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="fname" name="firstname" placeholder="Your name...">
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Your last name...">
+            </div>
+            
+            <div class="row">
+            <div class="col-25">
+                <label for="message">Message</label>
+            </div>
+            <div class="col-75">
+                <textarea id="message" name="message" placeholder="Share your thoughts..." style="height:200px"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Thabang Mogale-Developer. All rights reserved.</p>
+        </footer>
+
+        <script>
+            function scrollToSection(id) {document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name=document.getElementById('name').value;
+                document.getElementById('formStatus').textContent=Thanks;
+                this.reset();
+            });
+        </script>
+    </body>
+</html>
